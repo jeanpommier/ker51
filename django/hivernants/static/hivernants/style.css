@@ -1,0 +1,26 @@
+h1 {
+    font-size: 28px;
+}
+
+table.liste_hivernants {
+    margin-top:2em;
+}
+
+li a {
+    color: green;
+}
+
+.picture_small {
+    max-width: 50px;
+    max-height: 50px;
+    float: right;
+}
+
+html.map, html.map body, #map {
+    height: 100%;
+    width: 100%;
+}
+
+html.map .leaflet-popup-content h1 {
+    font-size: 14px;
+}
