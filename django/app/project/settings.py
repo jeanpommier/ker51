@@ -33,8 +33,9 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = []
-
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = env('ALLOWED_HOSTS').split(',')
+print('allowed hosts:{}'.format(ALLOWED_HOSTS))
 
 # Application definition
 
@@ -141,6 +142,7 @@ LOGIN_URL = '/admin/login/'
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = env('STATIC_URL')
+STATIC_ROOT = env('STATIC_ROOT')
 MEDIA_ROOT = env('MEDIA_ROOT')
 MEDIA_URL = env('MEDIA_URL')
 

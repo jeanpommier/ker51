@@ -1,4 +1,4 @@
-version: "3.1"
+version: "2"
 
 volumes:
   postgresql_data:
@@ -6,13 +6,9 @@ volumes:
 
 secrets:
   ker51_pg_postgres_password:
-    file: ./secrets/pg_postgres_password.txt
   ker51_pg_django_password:
-    file: ./secrets/pg_django_password.txt
   ker51_django_env:
-    file: ./secrets/django_env.txt
   ker51_django_superuser_password:
-    file: ./secrets/django_superuser_password.txt
 
 services:
   database:
@@ -51,8 +47,8 @@ services:
 #    image: nginx:alpine
     image: mopnaej/ker51nginx:latest
     build: ./nginx
-    ports:
-      - 80:80
+#    ports:
+#      - 80:80
     volumes:
       - django_static_files:/usr/share/nginx/html/static
 #      - ./nginx/templates:/etc/nginx/templates
