@@ -9,7 +9,7 @@ from django.views import generic
 from django_tables2 import SingleTableView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.serializers import serialize
-
+from django.views.generic.base import TemplateView
 
 from .models import Hivernant, Person
 from .tables import HivernantTable
@@ -24,6 +24,10 @@ from .tables import HivernantTable
 # def detail(request, person_id):
 #     person = get_object_or_404(Person, pk=person_id)
 #     return render(request, 'map/detail.html', {'person': person})
+
+
+class HomeView(TemplateView):
+    template_name = 'hivernants/index.html'
 
 class ListView(LoginRequiredMixin, SingleTableView):
     model = Hivernant

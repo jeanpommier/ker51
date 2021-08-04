@@ -26,4 +26,5 @@ urlpatterns = [
     # path('map/', include('map.urls')),
     path('hivernants/', include('hivernants.urls')),
     path('admin/', admin.site.urls),
+    path('', include('pages.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Accueil</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'hivernants/style.css' %}">
+  </head>
+  <body>
+    <h1>Annuaire & carte <br />des hivernants de la 51e et hivernants honoraires</h1>
+    <p>Ces informations sont à accès restreint, pour protéger les données "sensibles" (adresse, téléphone; localisation),
+      il faudra donc fournir un identifiant et un mot de passe.
+      Si vous n'avez pas les paramètres de connexion, <a href="mailto: jean@pomfont.fr">demandez-les moi</a> </p>
+    <ul>
+      <li><a href="{% url 'hivernants:map' %}">La carte</a></li>
+      <li><a href="{% url 'hivernants:list' %}">L'annuaire</a></li>
+      <li><a href="{% url 'admin:hivernants_hivernant_add' %}">Ajouter un hivernant</a></li>
+      <li><a href="{% url 'admin:hivernants_hivernant_changelist' %}">Modifier un enregistrement</a></li>
+    </ul>
+  </body>
+</html>

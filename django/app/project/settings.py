@@ -42,6 +42,7 @@ print('allowed hosts:{}'.format(ALLOWED_HOSTS))
 INSTALLED_APPS = [
     # 'map.apps.MapConfig',
     'hivernants.apps.HivernantsConfig',
+    'pages',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
