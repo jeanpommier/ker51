@@ -23,9 +23,12 @@ RUN mkdir -p /app && chown www-data:www-data /app
 WORKDIR /app
 #RUN groupadd -r www-data && useradd -r -g www-data www-data
 
+
 RUN pip3 install -U pip setuptools
-COPY --chown=www-data:www-data ./app/ /app/
+COPY --chown=www-data:www-data ./app/requirements.txt /app/requirements.txt
 RUN pip3 install -r /app/requirements.txt
+
+COPY --chown=www-data:www-data ./app/ /app/
 # Create static folder to store django static apps
 # Make www-data the owner (will be kept even if we mount a volume instead
 RUN mkdir /static && \
