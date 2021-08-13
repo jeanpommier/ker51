@@ -16,7 +16,7 @@ secrets:
 
 services:
   database:
-    image: mopnaej/ker51db:latest
+    image: mopnaej/ker51db:1.0
     build: ./database
     environment:
       - POSTGRES_PASSWORD_FILE=/run/secrets/pg_postgres_password
@@ -29,7 +29,7 @@ services:
     restart: always
 
   django:
-    image: mopnaej/ker51webapp:latest
+    image: mopnaej/ker51webapp:1.1
     build: ./django
 #    command: ["sleep","10000"]
 #    ports:
@@ -49,7 +49,7 @@ services:
 
   nginx:
 #    image: nginx:alpine
-    image: mopnaej/ker51nginx:latest
+    image: mopnaej/ker51nginx:1.1
     build: ./nginx
     ports:
       - 80:80
