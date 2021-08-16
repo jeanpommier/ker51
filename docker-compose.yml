@@ -16,7 +16,7 @@ secrets:
 
 services:
   database:
-    image: mopnaej/ker51db:1.0
+    image: mopnaej/ker51db:1.1
     build: ./database
     environment:
       - POSTGRES_PASSWORD_FILE=/run/secrets/pg_postgres_password

@@ -15,6 +15,8 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 COPY --chown=postgres sql/[0-9][0-9]*  /docker-entrypoint-initdb.d/
+COPY backupPGSQL.sh  /root/backupPGSQL.sh
+RUN chmod +x /root/backupPGSQL.sh
 
 HEALTHCHECK --interval=30s --timeout=30s \
   CMD pg_isready -U $POSTGRES_USER
